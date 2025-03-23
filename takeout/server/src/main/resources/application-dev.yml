@@ -1,0 +1,29 @@
+zxtechai:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    host: localhost
+    port: 3306
+    database: takeout
+    username: root
+    password: 123456
+  redis:
+    host: localhost
+    port: 6379
+    password:
+    database: 8
+  alioss:
+    endpoint: oss-cn-beijing.aliyuncs.com
+    access-key-secret: PORx60fcJ4Vp0iFOMHvm61wpAufjro
+    access-key-id: LTAI5tBUAkVtTitMpprZvQbY
+    bucket-name: takeoutproject
+  wechat:
+    appid: wx625db34c00f5dad4
+    secret: 9255738260b438e28813d2cff435b558
+    mchid: 1561414331
+    mchSerialNo: 4B3B3DC35414AD50B1B755BAF8DE9CC7CF407606
+    privateKeyFilePath: D:\pay\apiclient_key.pem
+    apiV3Key: CZBK51236435wxpay435434323FFDuv3
+    weChatPayCertFilePath: D:\pay\wechatpay_166D96F876F45C7D07CE98952A96EC980368ACFC.pem
+    notifyUrl: https://hsk.zhyunxuan.com/notify/paySuccess
+    refundNotifyUrl: https://hsk.zhyunxuan.com/notify/refundSuccess
+

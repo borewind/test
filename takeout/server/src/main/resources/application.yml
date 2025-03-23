@@ -1,0 +1,77 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: dev #开发环境
+#    active: prod #生产环境
+  main:
+    allow-circular-references: true
+  datasource:
+    druid:
+      driver-class-name: ${zxtechai.datasource.driver-class-name}
+      url: jdbc:mysql://${zxtechai.datasource.host}:${zxtechai.datasource.port}/${zxtechai.datasource.database}?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      username: ${zxtechai.datasource.username}
+      password: ${zxtechai.datasource.password}
+  redis:
+    host: ${zxtechai.redis.host}
+    port: ${zxtechai.redis.port}
+    password: ${zxtechai.redis.password}
+    database: ${zxtechai.redis.database}
+  thymeleaf:
+#    模板配置错误跳转页面
+    mode: HTML
+    cache: false
+    enabled: true
+    encoding: UTF-8
+    prefix: classpath:/template/
+    suffix: .html
+
+mybatis:
+  #mapper配置文件
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.zxtechai.entity
+  configuration:
+    #开启驼峰命名
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    com:
+      zxtechai:
+        mapper: debug
+        service: info
+        controller: info
+
+zxtechai:
+  jwt:
+    # 设置jwt签名加密时使用的秘钥
+    admin-secret-key: zexikj
+    # 设置jwt过期时间 单位:毫秒 72000000=20小时
+    admin-ttl: 72000000
+    # 设置前端传递过来的令牌名称
+    admin-token-name: token
+    user-secret-key: zexikjuser
+    user-token-name: usertoken
+    user-ttl: 72000000
+  alioss:
+    access-key-id: ${zxtechai.alioss.access-key-id}
+    access-key-secret: ${zxtechai.alioss.access-key-secret}
+    bucket-name: ${zxtechai.alioss.bucket-name}
+    endpoint: ${zxtechai.alioss.endpoint}
+  wechat:
+    appid: ${zxtechai.wechat.appid}
+    secret: ${zxtechai.wechat.secret}
+    mchid: ${zxtechai.wechat.mchid}
+    mchSerialNo: ${zxtechai.wechat.mchSerialNo}
+    privateKeyFilePath: ${zxtechai.wechat.privateKeyFilePath}
+    apiV3Key: ${zxtechai.wechat.apiV3Key}
+    weChatPayCertFilePath: ${zxtechai.wechat.weChatPayCertFilePath}
+    notifyUrl: ${zxtechai.wechat.notifyUrl}
+    refundNotifyUrl: ${zxtechai.wechat.refundNotifyUrl}
+  shop:
+      address: 甘肃省兰州市城关区80号
+  baidu:
+      ak: your-ak
+
+
